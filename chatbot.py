@@ -45,7 +45,13 @@ class ChatBot:
 
     def respond(self, message):
         message = message.lower()
-        if "joke" in message:
+        if "my name is" in message:
+            name = message.split("my name is")[-1].strip()
+            return f"Nice to meet you, {name.title()}!"
+        elif "i'm" in message or "i am" in message:
+            name = message.split("i am")[-1].strip() if "i am" in message else message.split("i'm")[-1].strip()
+            return f"Nice to meet you, {name.title()}!"
+        elif "joke" in message:
             return self.get_joke()
         elif "hi" in message or "hello" in message:
             return f"Hey there! I'm {self.name}. Want to hear a joke?"
