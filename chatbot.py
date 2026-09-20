@@ -58,8 +58,27 @@ class ChatBot:
         else:
             return f"You said: '{message}'. I'm here to help!"
 
+ # subclass that extends ChatBot to keep track of the number of jokes told       
+class SuperChatBot(ChatBot):
+    def __init__(self, name):
+        super().__init__(name)
+        self.joke_told = 0
+        
+    def get_joke(self):
+        joke = super().get_joke()
+        self.joke_told += 1
+        return joke
+    def joke_count(self):
+        return f"I have told you {self.joke_told} joke(s) so far!"
+    def respond(self, message):
+        message = message.lower()
+        if "how many jokes" in message:
+            return self.joke_count()
+        else:
+            return super().respond(message)
+        
 
-bot = ChatBot("Jokey")
+bot = SuperChatBot("ChatGPT")
 bot.load_history()
 bot.greet()
 
@@ -73,3 +92,7 @@ while True:
         reply = bot.respond(message)
         print(f"{bot.name}: {reply}")
         bot.add_to_history(message, reply)
+
+        
+        
+           
