@@ -47,10 +47,10 @@ class ChatBot:
         message = message.lower()
         if "my name is" in message:
             name = message.split("my name is")[-1].strip()
-            return f"Nice to meet you, {name.title()}!"
+            return f"Nice to meet you, {name.title()}! Want to hear a joke?"
         elif "i'm" in message or "i am" in message:
             name = message.split("i am")[-1].strip() if "i am" in message else message.split("i'm")[-1].strip()
-            return f"Nice to meet you, {name.title()}!"
+            return f"Nice to meet you, {name.title()}! Want to hear a joke?"
         elif "joke" in message:
             return self.get_joke()
         elif "hi" in message or "hello" in message:
@@ -78,7 +78,7 @@ class SuperChatBot(ChatBot):
             return super().respond(message)
         
 
-bot = SuperChatBot("Joke")
+bot = SuperChatBot("Jokey")
 bot.load_history()
 bot.greet()
 
