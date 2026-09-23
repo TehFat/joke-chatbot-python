@@ -78,7 +78,7 @@ class SuperChatBot(ChatBot):
             return super().respond(message)
         
 
-bot = SuperChatBot("ChatGPT")
+bot = SuperChatBot("Joke")
 bot.load_history()
 bot.greet()
 
