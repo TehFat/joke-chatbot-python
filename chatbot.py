@@ -40,7 +40,11 @@ class ChatBot:
                 return f"{joke_data['setup']} ... {joke_data['punchline']}"
             else:
                 return "Sorry, I couldn't fetch a joke at the moment."
-        except Exception as e:
+        except requests.exceptions.ConnectionError:
+            return "Sorry, I couldn't connect to the joke service. Please check your internet connection."
+        except requests.exceptions.Timeout:
+            return "Sorry, the request timed out. Please try again later."
+        except requests.exceptions.RequestException as e:
             return f"An error occurred: {e}"
 
     def respond(self, message):
