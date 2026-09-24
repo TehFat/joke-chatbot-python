@@ -70,6 +70,10 @@ Working on this project helped me understand object-oriented programming in a mu
 
 My chatbot fetches live data from a public joke API and uses `try`/`except` error handling so it doesn't crash if that request fails. This connects to the Microsoft Azure Fundamentals (AZ-900) certification, an entry-level certificate that covers core cloud concepts — including connecting to and using services over the internet, and handling failures reliably. Although my project doesn't run on Azure itself, it uses the same underlying skills that certification is built around.
 
+## Analys
+
+Even though my chatbot uses simple keyword matching instead of real AI/NLP, it already demonstrates several building blocks that real AI-powered products also rely on: personalizing responses once it knows the user's name, connecting to a live external data source (the joke API) instead of only using pre-written answers, remembering conversations between sessions by saving and reloading them from a JSON file, and tracking usage during a session (the joke counter). A more advanced, AI-driven version of this same chatbot would still need all of these — just with a language model deciding what to say, instead of keyword matching.
+
 ## Användning av AI-verktyg (Use of AI tools)
 
 I used Claude (an AI assistant) as a learning aid throughout this project, in the following ways: explaining Python and OOP concepts in plain language, reviewing code I had written myself to point out bugs (without giving me the finished solution first), providing skeleton code with blanks for me to fill in so I would practice writing the logic myself, and answering setup questions (Git/GitHub, VS Code configuration, installing packages). All the code in this project was written and typed by me; the AI's role was to teach, review, and explain rather than to generate the final solution outright. No personal or sensitive data was shared with the AI tool during this process.
